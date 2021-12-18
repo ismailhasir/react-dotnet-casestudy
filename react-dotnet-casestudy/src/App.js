@@ -4,7 +4,7 @@ import Dashboard from "./components/Dashboard";
 function App() {
   return (
     <div className="App">
-      <Dashboard name="ismail" password="123" />
+      <Dashboard />
     </div>
   );
 }

@@ -1,13 +1,17 @@
 import "./Dashboard.css";
 
-export default function Dashboard(props) {
+function DashbBoard() {
   return (
-    <div className="dash">
-      <h2>Welcome</h2>
-      <h3>Username:{props.name}</h3>
-      <h3>Password:{props.password}</h3>
+    <form className="login-form">
+      <h1>Welcome</h1>
+      <label>Username:</label>
+      <input type="text" />
+      <label>Password:</label>
+      <input type="password" />
       <button>LOGIN</button>
       <p>Forgot Username/Password?</p>
-    </div>
+    </form>
   );
 }
+
+export default DashbBoard;
