@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import LoginButton from "./components/LoginButton";
+import LoginScreen from "./components/LoginScreen";
 
 function App() {
-  return <LoginButton />;
+  return <LoginScreen />;
 }
 
 export default App;
