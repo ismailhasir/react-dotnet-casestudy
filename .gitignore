@@ -1,15 +1,15 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
+/Client/node_modules
+/Client/.pnp
 .pnp.js
 
 # testing
-/coverage
+/Client/coverage
 
 # production
-/build
+/Client/build
 
 # misc
 .DS_Store
@@ -21,3 +21,43 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# .net project ignore files
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+nupkg/
+
+# Visual Studio Code
+.vscode
+
+# Rider
+.idea
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# Visual Studio 2015
+.vs/
+/Server/Api/Migrations
