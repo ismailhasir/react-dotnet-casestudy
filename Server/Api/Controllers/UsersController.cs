@@ -25,6 +25,7 @@ namespace Api.Controllers
         [HttpPost("Login")]
         public IActionResult Login(UsersDto.LoginRequest req)
         {
+            
             var query = _dbContext.Users.Where(w => w.Email == req.Email && w.Password == req.Password);
             if (query.Any())
             {
