@@ -6,7 +6,7 @@ import loginIcon from "../images/loginIcon.png";
 import loginBG from "../images/loginBG.png";
 import { Link } from "react-router-dom";
 
-export default function LoginScreen() {
+export default function SignUp() {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
 
@@ -20,14 +20,30 @@ export default function LoginScreen() {
               e.preventDefault();
             }}
           >
+            <Form.Group className="mb-3" controlId="formBasicName">
+              <Form.Control
+                type="string"
+                placeholder="Name"
+                id="name "
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicSurname">
+              <Form.Control
+                type="string"
+                placeholder="Surname"
+                id="surname"
+                required
+              />
+            </Form.Group>
+
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Control
                 type="email"
-                placeholder="E-mail"
-                value={Email}
-                id="email "
+                placeholder="E-Mail"
+                id="email"
                 required
-                onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Group>
 
@@ -35,15 +51,22 @@ export default function LoginScreen() {
               <Form.Control
                 type="password"
                 placeholder="Password"
-                value={Password}
                 id="password"
                 required
-                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
+              <Form.Control
+                type="password"
+                placeholder="Confirm Password"
+                id="confirm-password"
+                required
               />
             </Form.Group>
 
             <Button variant="primary btn-block" type="submit">
-              Login
+              Sign Up
             </Button>
 
             <div className="text-left mt-3">
@@ -53,8 +76,8 @@ export default function LoginScreen() {
             </div>
 
             <div className="text-left mt-3">
-              <Link to="/signup">
-                <small className="reset">Not have an account?</small>
+              <Link to="/login">
+                <small className="reset">Already have an account?</small>
               </Link>
             </div>
           </Form>
