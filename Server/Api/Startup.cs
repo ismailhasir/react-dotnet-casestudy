@@ -39,6 +39,7 @@ namespace Api
             services.AddDbContext<ApiDbContext>(opt =>
             {
                 opt.UseSqlServer(new SqlConnectionStringBuilder(Configuration["AppSettings:ConnectionString"]).ConnectionString);
+
             });
         }
 
@@ -62,6 +63,12 @@ namespace Api
             {
                 endpoints.MapControllers();
             });
+
+            using (var serviceScope =app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<ApiDbContext>();
+                context.Database.EnsureCreated();
+            }
         }
     }
 }
