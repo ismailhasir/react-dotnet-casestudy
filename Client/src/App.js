@@ -3,7 +3,11 @@ import "./App.css";
 import LoginScreen from "./components/LoginScreen";
 
 function App() {
-  return <LoginScreen />;
+  return (
+    <div>
+      <LoginScreen />>
+    </div>
+  );
 }
 
 export default App;
