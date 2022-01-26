@@ -1,0 +1,14 @@
+.featured {
+  display: flex;
+  border: 2px solid blue;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.featuredItem {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
