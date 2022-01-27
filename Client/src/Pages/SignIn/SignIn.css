@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 50vh;
+}
+
+.lockicon {
+  height: 40px;
+  width: 40px;
+  background-color: blueviolet;
+  border-radius: 50%;
+  color: white;
+  padding: 5px;
+}
