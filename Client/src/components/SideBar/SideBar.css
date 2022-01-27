@@ -23,6 +23,7 @@
 .sidebarList {
   list-style: none;
   padding: 5px;
+  border-bottom: 1px solid rgb(128, 119, 119);
 }
 
 .sidebarListItem {

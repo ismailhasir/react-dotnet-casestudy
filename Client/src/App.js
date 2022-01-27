@@ -9,13 +9,14 @@ import SignUp from "./Pages/SignUp/SignUp";
 function App() {
   return (
     <div>
-      {/* <TopBar />
-      <div className="container">
+      <TopBar />
+      <div className="main">
         <SideBar />
         <Home />
-      </div>*/}
-      <SignIn />
-      <SignUp />
+      </div>
+
+      {/*<SignIn />
+      <SignUp />*/}
     </div>
   );
 }
