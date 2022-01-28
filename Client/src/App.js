@@ -1,22 +1,18 @@
 import React from "react";
 import "./App.css";
-import TopBar from "./components/TopBar/TopBar";
-import SideBar from "./components/SideBar/SideBar";
-import Home from "./Pages/Home/Home";
-import SignIn from "./Pages/SignIn/SignIn";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignUp from "./Pages/SignUp/SignUp";
+import SignIn from "./Pages/SignIn/SignIn";
 
 function App() {
   return (
-    <div>
-      <TopBar />
-      <div className="main">
-        <SideBar />
-        <Home />
-      </div>
-
-      {/*<SignIn />
-      <SignUp />*/}
+    <div className="App">
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<SignIn />} />
+          <Route exact path="/signup" element={<SignUp />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
