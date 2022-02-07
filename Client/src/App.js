@@ -7,6 +7,11 @@ import RequiredAuth from "./components/Auth/RequiredAtuh";
 import NotRequiredAuth from "./components/Auth/NotRequiredAuth";
 
 function App() {
+  const handleLogOut = () => {
+    localStorage.clear();
+    // window.location.href = "./";
+  };
+
   return (
     <div className="App">
       <Router>
@@ -27,6 +32,7 @@ function App() {
             element={
               <RequiredAuth>
                 <>Anasayfa</>
+                <button onClick={handleLogOut}>Log Out</button>
               </RequiredAuth>
             }
           />

@@ -1,7 +1,6 @@
 import "./SignUp.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import Axios from "axios";
 
 export default function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -18,6 +17,7 @@ export default function SignUp() {
     console.log(userInfo);
 
     fetch(url, {
+      //API'ye kayit icin request atiyorum.
       method: "POST",
       body: JSON.stringify(userInfo),
       headers: {
@@ -25,19 +25,16 @@ export default function SignUp() {
       },
     })
       .then(function (response) {
-        // Shorthand to check for an HTTP 2xx response status.
-        // See https://fetch.spec.whatwg.org/#dom-response-ok
         const { ok, status } = response;
         if (ok) {
-          // setIsSuccess(true);
-          navigate("/");
+          //Kayit basarili olursa(200 donerse),SIGN IN sayfasina gidecegiz.
+          navigate("/signin");
           return response;
         }
         if (status === 422) {
           return response.text();
         }
-        // Raise an exception to reject the promise and trigger the outer .catch() handler.
-        // By default, an error response status (4xx, 5xx) does NOT cause the promise to reject!
+
         throw Error(response.statusText);
       })
       .then(function (response) {
