@@ -6,12 +6,12 @@ export default function SignIn() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const loginInfo = { email, password };
-  const navigate = useNavigate();
+  const navigate = useNavigate(); //HOOK ILE
 
   const handleLogin = (e) => {
     e.preventDefault();
     console.log(email, password);
-    fetch("https://localhost:5001/api/user/Login", {
+    fetch("https://localhost:5001/api/Users/Login", {
       //API'ye giris icin request atiyorum.
       method: "POST",
       body: JSON.stringify(loginInfo),
@@ -21,9 +21,12 @@ export default function SignIn() {
     })
       .then(function (response) {
         const { ok, status } = response;
+
         if (ok) {
+          localStorage.setItem("auth", true);
           navigate("/");
           //giris basarili olursa(200 donerse),anasayfaya donecegiz.
+
           return response;
         }
         if (status === 422) {

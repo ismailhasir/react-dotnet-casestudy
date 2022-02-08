@@ -1,4 +1,5 @@
 import React from "react";
+import Home from "./Pages/Home/Home";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignUp from "./Pages/SignUp/SignUp";
@@ -7,11 +8,6 @@ import RequiredAuth from "./components/Auth/RequiredAtuh";
 import NotRequiredAuth from "./components/Auth/NotRequiredAuth";
 
 function App() {
-  const handleLogOut = () => {
-    localStorage.clear();
-    // window.location.href = "./";
-  };
-
   return (
     <div className="App">
       <Router>
@@ -31,8 +27,7 @@ function App() {
             path="/"
             element={
               <RequiredAuth>
-                <>Anasayfa</>
-                <button onClick={handleLogOut}>Log Out</button>
+                <Home />
               </RequiredAuth>
             }
           />
