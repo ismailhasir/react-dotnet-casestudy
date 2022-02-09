@@ -1,6 +1,7 @@
 import "./Home.css";
 import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
+import ClassDashboard from "../../components/ClassDashboard/ClassDashboard";
 
 export default function Home() {
   const [flag, setFlag] = useState(false);
@@ -29,8 +30,7 @@ export default function Home() {
   }
   return (
     <div className="home">
-      <h3>Dashboard</h3>
-
+      <ClassDashboard />
       <button onClick={handleLogOut}>Log Out</button>
     </div>
   );
