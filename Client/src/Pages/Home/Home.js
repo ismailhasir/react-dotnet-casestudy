@@ -2,6 +2,8 @@ import "./Home.css";
 import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import ClassDashboard from "../../components/ClassDashboard/ClassDashboard";
+import TopBar from "../../components/TopBar/TopBar";
+import SideBar from "../../components/SideBar/SideBar";
 
 export default function Home() {
   const [flag, setFlag] = useState(false);
@@ -25,12 +27,16 @@ export default function Home() {
     checkAuth();
   }, []);
 
-  if (flag == true) {
+  if (flag === true) {
     return <Navigate to="/signin" />; //COMPONENT ILE
   }
   return (
     <div className="home">
-      <ClassDashboard />
+      <TopBar />
+      <div className="home-main">
+        <SideBar />
+        <ClassDashboard />
+      </div>
       <button onClick={handleLogOut}>Log Out</button>
     </div>
   );

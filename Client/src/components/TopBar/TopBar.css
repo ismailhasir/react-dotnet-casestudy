@@ -1,0 +1,22 @@
+.topbar-wrapper {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(rgb(235, 235, 235), green, blue);
+  border-bottom: 1px solid forestgreen;
+}
+
+.topbar-label {
+  font-size: larger;
+  font-weight: 700;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.btn-out {
+  height: 30px;
+  margin-top: 10px;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+}

@@ -1,23 +1,24 @@
 import "./ClassDashboard.css";
-import { useState } from "react";
 
 export default function ClassDashboard() {
-  const url = "https://jsonplaceholder.typicode.com/users";
-  const [data, setData] = useState();
+  let datas = ["5/B", "4/E", "9/A"];
 
-  fetch(url)
-    .then((res) => res.json())
-    .then((data) => {
-      setData(data);
-    });
+  const handleAdd = (e) => {
+    datas.push(e.target.value);
+  };
 
+  console.log(datas);
   return (
     <div className="dashboard">
       <h1>Class Management</h1>
       <div className="dashboard-add">
         <div>
           <span>Please use the 'Create' button for add a new class.</span>
-          <input type="text" placeholder="Class Name"></input>
+          <input
+            type="text"
+            placeholder="Class Name"
+            onSubmit={handleAdd}
+          ></input>
         </div>
         <button>Create</button>
       </div>
@@ -30,25 +31,23 @@ export default function ClassDashboard() {
               <th>Class Name</th>
               <th>Action</th>
             </tr>
+
+            {datas.map(function (name, index) {
+              return (
+                <tr>
+                  <td>{index + 1}</td>
+                  <td>{name}</td>
+                  <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                  </td>
+                </tr>
+              );
+            })}
+
             <tr>
-              <td>{data[0].id}</td>
-              <td>{data[0].name}</td>
-              <td>
-                <button>Edit</button>
-                <button>Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td>{data[1].id}</td>
-              <td>{data[1].name}</td>
-              <td>
-                <button>Edit</button>
-                <button>Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td>{data[2].id}</td>
-              <td>{data[2].name}</td>
+              <td>2</td>
+              <td>b</td>
               <td>
                 <button>Edit</button>
                 <button>Delete</button>
