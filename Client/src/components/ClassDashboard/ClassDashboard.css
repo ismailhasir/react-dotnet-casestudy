@@ -17,7 +17,6 @@
 table {
   border: 2px solid forestgreen;
   width: 800px;
-  height: 200px;
 }
 
 th {
@@ -30,4 +29,16 @@ td {
 
 tr {
   border: 1px solid black;
+}
+
+h1 {
+  border-bottom: 1px solid forestgreen;
+  color: forestgreen;
+}
+
+span {
+  font-weight: bold;
+}
+input {
+  margin-right: 5px;
 }
