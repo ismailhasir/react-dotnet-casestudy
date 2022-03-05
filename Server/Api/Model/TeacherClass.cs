@@ -16,6 +16,6 @@ namespace Api.Model
         public int TeacherId { get; set; }
 
         public virtual Class Classes { get; set; }
-        public virtual User User { get; set; }
+        public virtual User Teachers { get; set; }
     }
 }
