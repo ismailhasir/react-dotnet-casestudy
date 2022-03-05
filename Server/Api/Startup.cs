@@ -29,7 +29,7 @@ namespace Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddCors();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -53,9 +53,18 @@ namespace Api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api v1"));
             }
 
-            app.UseHttpsRedirection();
 
+            app.UseCors(x => x
+               .AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader()
+
+                );
+            app.UseHttpsRedirection();
             app.UseRouting();
+
+            app.UseAuthentication();
+
 
             app.UseAuthorization();
 
@@ -64,11 +73,13 @@ namespace Api
                 endpoints.MapControllers();
             });
 
-            using (var serviceScope =app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
                 var context = serviceScope.ServiceProvider.GetRequiredService<ApiDbContext>();
                 context.Database.EnsureCreated();
             }
+
+
         }
     }
 }
