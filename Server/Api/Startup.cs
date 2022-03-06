@@ -53,12 +53,12 @@ namespace Api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api v1"));
             }
 
-            
+
             app.UseCors(x => x
                .AllowAnyOrigin()
                .AllowAnyMethod()
                .AllowAnyHeader()
-                
+
                 );
             app.UseHttpsRedirection();
             app.UseRouting();
@@ -79,7 +79,7 @@ namespace Api
                 context.Database.EnsureCreated();
             }
 
-            
+
         }
     }
 }
