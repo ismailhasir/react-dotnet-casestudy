@@ -66,7 +66,7 @@ namespace Api.Controllers
                 return Problem("Bir hata oluştu");
             }
 
-            return Ok();
+            return Ok("Başarıyla kayıt oluşturuldu.");
         }
     }
 }

@@ -1,0 +1,44 @@
+.dashboard {
+  width: 800px;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 4;
+}
+
+.dashboard-add {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
+
+table {
+  border: 2px solid forestgreen;
+  width: 800px;
+}
+
+th {
+  border-bottom: 1px solid black;
+}
+
+td {
+  text-align: center;
+}
+
+tr {
+  border: 1px solid black;
+}
+
+h1 {
+  border-bottom: 1px solid forestgreen;
+  color: forestgreen;
+}
+
+span {
+  font-weight: bold;
+}
+input {
+  margin-right: 5px;
+}
